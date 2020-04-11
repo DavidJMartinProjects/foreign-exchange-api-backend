@@ -8,9 +8,9 @@ import java.util.ArrayList;
 
 @Data
 @Component
-@ConfigurationProperties
+@ConfigurationProperties(prefix = "currency")
 public class CurrenciesConfig {
 
-	private ArrayList currencies;
+	private ArrayList symbols;
 
 }

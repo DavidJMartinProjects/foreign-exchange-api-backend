@@ -27,7 +27,7 @@ public class ForexApiService {
 	public CurrencyRates getMajorCurrencyPairs() {
 		ResponseEntity<String> requestEntity = restTemplateAdapter.performGetRequest(
 				externalUrlsConfig.getMajorCurrenciesUrl() +
-						mapperUtil.mapListToString((currenciesConfig.getCurrencies())));
+						mapperUtil.mapListToString((currenciesConfig.getSymbols())));
 		return mapperUtil.mapToMajorCurrencies(requestEntity);
 	}
 
