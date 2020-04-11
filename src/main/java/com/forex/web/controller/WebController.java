@@ -1,4 +1,4 @@
-package com.forex.web;
+package com.forex.web.controller;
 
 import com.forex.external.pojo.SupportedCurrencies;
 import com.forex.external.service.ForexApiService;

@@ -1,7 +1,8 @@
-package com.forex.external.util;
+package com.forex.external.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.forex.external.pojo.SupportedCurrencies;
+import com.forex.external.util.RequestUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;

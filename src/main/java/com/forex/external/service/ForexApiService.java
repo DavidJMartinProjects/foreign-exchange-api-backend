@@ -2,7 +2,6 @@ package com.forex.external.service;
 
 import com.forex.business.config.ExternalUrlsConfig;
 import com.forex.external.pojo.SupportedCurrencies;
-import com.forex.external.util.RestTemplateAdapter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
