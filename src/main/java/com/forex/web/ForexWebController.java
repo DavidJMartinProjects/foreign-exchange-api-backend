@@ -1,6 +1,5 @@
 package com.forex.web;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.forex.external.pojo.SupportedCurrencies;
 import com.forex.external.service.ExternalForexApiService;
 import lombok.extern.slf4j.Slf4j;
