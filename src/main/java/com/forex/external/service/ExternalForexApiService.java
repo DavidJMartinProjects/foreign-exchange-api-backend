@@ -14,7 +14,7 @@ public class ExternalForexApiService {
 
 	private String externalServiceUrl = "https://www.freeforexapi.com/api/live";
 
-	public SupportedCurrencies getSupportedCurrencyPairs() throws JsonProcessingException {
+	public SupportedCurrencies getSupportedCurrencyPairs() {
 		return restTemplateAdapter.performGetRequest(externalServiceUrl);
 	}
 

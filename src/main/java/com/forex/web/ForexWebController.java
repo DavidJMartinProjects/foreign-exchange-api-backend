@@ -26,7 +26,7 @@ public class ForexWebController {
     }
 
     @GetMapping(value = "/all")
-    public ResponseEntity<SupportedCurrencies> getAllSupportedCurrencies() throws JsonProcessingException {
+    public ResponseEntity<SupportedCurrencies> getAllSupportedCurrencies() {
         log.info("request received successfully.");
         return new ResponseEntity(externalForexApiService.getSupportedCurrencyPairs(), HttpStatus.OK);
     }
