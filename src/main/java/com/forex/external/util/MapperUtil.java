@@ -18,7 +18,7 @@ public class MapperUtil {
 		try {
 			supportedCurrencies = new ObjectMapper().readValue(responseEntity.getBody().toString(), SupportedCurrencies.class);
 		} catch (IOException exception) {
-			log.info("error mapping response from external service.", exception.getMessage(), exception.getCause());
+			log.error("error mapping response from external service.", exception.getMessage(), exception.getCause());
 		}
 		return supportedCurrencies;
 	}
