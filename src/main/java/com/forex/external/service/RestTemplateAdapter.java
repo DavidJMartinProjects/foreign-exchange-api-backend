@@ -21,7 +21,8 @@ public class RestTemplateAdapter {
 		try {
 			responseEntity = new RestTemplate().exchange(url, HttpMethod.GET, requestUtil.buildHeaders(), String.class);
 		} catch (Exception exception) {
-			log.error("failed to get response from url: {}, error message: {}, cause: {}" + url, exception.getMessage(), exception.getCause());
+			log.error("failed to get response from url: {}, error message: {}, cause: {}"
+					+ url, exception.getMessage(), exception.getCause());
 		}
 		return responseEntity;
 	}

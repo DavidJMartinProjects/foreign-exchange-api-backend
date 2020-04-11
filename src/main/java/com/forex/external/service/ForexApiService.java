@@ -8,8 +8,6 @@ import com.forex.external.util.MapperUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-
 @Service
 public class ForexApiService {
 
@@ -35,7 +33,7 @@ public class ForexApiService {
 		return mapperUtil.mapToMajorCurrencies(
 				restTemplateAdapter.performGetRequest(
 				 externalUrlsConfig.getMajorCurrenciesUrl() +
-						 mapperUtil.mapListToString((ArrayList) currenciesConfig.getCurrencies())));
+						 mapperUtil.mapListToString((currenciesConfig.getCurrencies()))));
 	}
 
 }
