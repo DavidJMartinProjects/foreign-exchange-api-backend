@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "paths.external-api")
 public class ExternalUrlsConfig {
 
-	private String supportedCurrenciesUrl;
 	private String majorCurrenciesUrl;
 
 }
