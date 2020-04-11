@@ -20,13 +20,15 @@ public class RestTemplateAdapter {
 	private SupportedCurrencies supportedCurrencies;
 
 	public SupportedCurrencies performGetRequest(final String url) {
+
 		try {
-			supportedCurrencies = new ObjectMapper().readValue(new RestTemplate().exchange(
-				url, HttpMethod.GET, restTemplateUtil.buildHeaders(), String.class).getBody(), SupportedCurrencies.class);
+			String responseBody = new RestTemplate().exchange(url, HttpMethod.GET, restTemplateUtil.buildHeaders(), String.class).getBody();
+			supportedCurrencies = new ObjectMapper().readValue(responseBody, SupportedCurrencies.class);
 		} catch (IOException exception) {
 			log.info("error processing request from external service.", exception.getMessage(), exception.getCause());
 		}
 		return supportedCurrencies;
+
 	}
 
 }
