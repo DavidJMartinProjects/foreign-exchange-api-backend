@@ -1,15 +1,18 @@
 package com.forex.business.config;
 
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-@Data
-@Component
-@ConfigurationProperties(prefix = "paths.external-api")
-public class ExternalUrlsConfig {
+import java.util.List;
 
-	private String supportedCurrenciesUrl;
-	private String majorCurrenciesUrl;
+@Data
+@Slf4j
+@Component
+@ConfigurationProperties
+public class CurrenciesConfig {
+
+	private List currencies;
 
 }

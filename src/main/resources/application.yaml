@@ -7,4 +7,15 @@ spring:
 
 paths:
   external-api:
-    forexApiUrl: 'https://www.freeforexapi.com/api/live'
+    supportedCurrenciesUrl: 'https://www.freeforexapi.com/api/live'
+    majorCurrenciesUrl: 'https://www.freeforexapi.com/api/live?pairs='
+
+currencies:
+  - 'EURUSD'
+  - 'EURGBP'
+  - 'GBPUSD'
+  - 'USDJPY'
+  - 'AUDUSD'
+  - 'USDCHF'
+  - 'NZDUSD'
+  - 'USDCAD'

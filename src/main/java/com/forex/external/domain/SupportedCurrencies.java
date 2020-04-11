@@ -1,4 +1,4 @@
-package com.forex.external.pojo;
+package com.forex.external.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;

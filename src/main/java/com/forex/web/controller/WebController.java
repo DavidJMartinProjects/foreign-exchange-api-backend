@@ -1,6 +1,7 @@
 package com.forex.web.controller;
 
-import com.forex.external.pojo.SupportedCurrencies;
+import com.forex.external.domain.CurrencyRates;
+import com.forex.external.domain.SupportedCurrencies;
 import com.forex.external.service.ForexApiService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,12 @@ public class WebController {
     public ResponseEntity<SupportedCurrencies> getAllSupportedCurrencies() {
         log.info("GET /all request received successfully.");
         return new ResponseEntity(forexApiService.getSupportedCurrencyPairs(), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/major")
+    public ResponseEntity<CurrencyRates> getMajorCurrencyPairs() {
+        log.info("GET /major request received successfully.");
+        return new ResponseEntity(forexApiService.getMajorCurrencyPairs(), HttpStatus.OK);
     }
 
 }
