@@ -14,7 +14,7 @@ public class ForexApiService {
 	private MapperUtil mapperUtil;
 
 	@Autowired
-	CurrenciesConfig currenciesConfig;
+	private CurrenciesConfig currenciesConfig;
 
 	@Autowired
 	private ExternalUrlsConfig externalUrlsConfig;
