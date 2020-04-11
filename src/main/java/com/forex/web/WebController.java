@@ -1,7 +1,7 @@
 package com.forex.web;
 
 import com.forex.external.pojo.SupportedCurrencies;
-import com.forex.external.service.ExternalForexApiService;
+import com.forex.external.service.ForexApiService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/forex")
-public class ForexWebController {
+public class WebController {
 
     @Autowired
-    ExternalForexApiService externalForexApiService;
+    ForexApiService forexApiService;
 
     @GetMapping
     public ResponseEntity<String> getAllExchangeRates() {
@@ -27,7 +27,7 @@ public class ForexWebController {
     @GetMapping(value = "/all")
     public ResponseEntity<SupportedCurrencies> getAllSupportedCurrencies() {
         log.info("request received successfully.");
-        return new ResponseEntity(externalForexApiService.getSupportedCurrencyPairs(), HttpStatus.OK);
+        return new ResponseEntity(forexApiService.getSupportedCurrencyPairs(), HttpStatus.OK);
     }
 
 }
