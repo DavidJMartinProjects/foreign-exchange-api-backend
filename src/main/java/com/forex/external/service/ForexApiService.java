@@ -39,4 +39,5 @@ public class ForexApiService {
 				 externalUrlsConfig.getMajorCurrenciesUrl() +
 						 mapperUtil.mapListToString((ArrayList) currenciesConfig.getCurrencies())));
 	}
+
 }
