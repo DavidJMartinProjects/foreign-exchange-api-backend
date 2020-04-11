@@ -5,8 +5,6 @@ import com.forex.business.config.ExternalUrlsConfig;
 import com.forex.external.domain.CurrencyRates;
 import com.forex.external.util.MapperUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.RequestEntity;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,10 +23,11 @@ public class ForexApiService {
 	private RestTemplateAdapter restTemplateAdapter;
 
 	public CurrencyRates getMajorCurrencyPairs() {
-		ResponseEntity<String> requestEntity = restTemplateAdapter.performGetRequest(
-				externalUrlsConfig.getMajorCurrenciesUrl() +
-						mapperUtil.mapListToString((currenciesConfig.getSymbols())));
-		return mapperUtil.mapToMajorCurrencies(requestEntity);
+		return mapperUtil.mapToMajorCurrencies(restTemplateAdapter.performGetRequest(buildUrl()));
+	}
+
+	private String buildUrl() {
+		return externalUrlsConfig.getMajorCurrenciesUrl() +	mapperUtil.mapListToString((currenciesConfig.getSymbols()));
 	}
 
 }
