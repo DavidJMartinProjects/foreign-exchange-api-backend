@@ -8,5 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "paths.external-api")
 public class ExternalUrlsConfig {
+
 	private String forexApiUrl;
+
 }
