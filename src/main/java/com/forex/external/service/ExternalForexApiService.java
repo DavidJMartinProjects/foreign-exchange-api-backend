@@ -1,6 +1,5 @@
 package com.forex.external.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.forex.external.pojo.SupportedCurrencies;
 import com.forex.external.util.RestTemplateAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
