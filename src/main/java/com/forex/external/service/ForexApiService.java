@@ -13,17 +13,16 @@ import org.springframework.stereotype.Service;
 public class ForexApiService {
 
 	@Autowired
+	MapperUtil mapperUtil;
+
+	@Autowired
 	ExternalUrlsConfig externalUrlsConfig;
 
 	@Autowired
 	RestTemplateAdapter restTemplateAdapter;
 
-	@Autowired
-	MapperUtil mapperUtil;
-
 	public SupportedCurrencies getSupportedCurrencyPairs() {
-		ResponseEntity responseEntity = restTemplateAdapter.performGetRequest(externalUrlsConfig.getForexApiUrl());
-		return mapperUtil.mapToSupportedCurrencies(responseEntity);
+		return mapperUtil.mapToSupportedCurrencies(restTemplateAdapter.performGetRequest(externalUrlsConfig.getForexApiUrl()));
 	}
 
 }
