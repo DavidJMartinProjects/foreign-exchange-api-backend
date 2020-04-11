@@ -7,7 +7,7 @@ spring:
 
 paths:
   external-api:
-    majorCurrenciesUrl: 'https://www.freeforexapi.com/api/live?pairs='
+    majorCurrenciesPath: 'https://www.freeforexapi.com/api/live?pairs='
 
 currency:
   symbols:

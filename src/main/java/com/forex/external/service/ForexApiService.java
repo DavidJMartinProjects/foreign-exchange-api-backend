@@ -1,7 +1,7 @@
 package com.forex.external.service;
 
-import com.forex.business.config.CurrenciesConfig;
-import com.forex.business.config.ExternalUrlsConfig;
+import com.forex.business.config.Symbols;
+import com.forex.business.config.ExternalUrls;
 import com.forex.external.domain.CurrencyRates;
 import com.forex.external.util.MapperUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +14,10 @@ public class ForexApiService {
 	private MapperUtil mapperUtil;
 
 	@Autowired
-	private CurrenciesConfig currenciesConfig;
+	private Symbols symbols;
 
 	@Autowired
-	private ExternalUrlsConfig externalUrlsConfig;
+	private ExternalUrls externalUrls;
 
 	@Autowired
 	private RestTemplateAdapter restTemplateAdapter;
@@ -27,7 +27,7 @@ public class ForexApiService {
 	}
 
 	private String buildUrl() {
-		return externalUrlsConfig.getMajorCurrenciesUrl() +	mapperUtil.mapListToString((currenciesConfig.getSymbols()));
+		return externalUrls.getMajorCurrenciesPath() + mapperUtil.mapListToString((symbols.getSymbols()));
 	}
 
 }

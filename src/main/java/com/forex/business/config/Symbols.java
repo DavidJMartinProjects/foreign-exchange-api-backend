@@ -4,11 +4,13 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+
 @Data
 @Component
-@ConfigurationProperties(prefix = "paths.external-api")
-public class ExternalUrlsConfig {
+@ConfigurationProperties(prefix = "currency")
+public class Symbols {
 
-	private String majorCurrenciesUrl;
+	private ArrayList symbols;
 
 }
