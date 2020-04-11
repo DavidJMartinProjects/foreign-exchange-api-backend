@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
 @Component
-public class RestTemplateUtil {
+public class RequestUtil {
 
 	public HttpEntity<String> buildHeaders() {
 		HttpHeaders headers = new HttpHeaders();

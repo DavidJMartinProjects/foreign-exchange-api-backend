@@ -15,13 +15,13 @@ import java.io.IOException;
 public class RestTemplateAdapter {
 
 	@Autowired
-	RestTemplateUtil restTemplateUtil;
+	RequestUtil requestUtil;
 
 	private SupportedCurrencies supportedCurrencies;
 
 	public SupportedCurrencies performGetRequest(final String url) {
 		try {
-			String responseBody = new RestTemplate().exchange(url, HttpMethod.GET, restTemplateUtil.buildHeaders(), String.class).getBody();
+			String responseBody = new RestTemplate().exchange(url, HttpMethod.GET, requestUtil.buildHeaders(), String.class).getBody();
 			supportedCurrencies = new ObjectMapper().readValue(responseBody, SupportedCurrencies.class);
 		} catch (IOException exception) {
 			log.info("error processing request from external service.", exception.getMessage(), exception.getCause());
