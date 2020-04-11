@@ -5,13 +5,11 @@ import com.forex.business.config.ExternalUrlsConfig;
 import com.forex.external.domain.CurrencyRates;
 import com.forex.external.domain.SupportedCurrencies;
 import com.forex.external.util.MapperUtil;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
-@Slf4j
 @Service
 public class ForexApiService {
 
