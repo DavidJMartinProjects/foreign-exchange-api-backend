@@ -28,11 +28,15 @@ public class ForexApiService {
 	private RestTemplateAdapter restTemplateAdapter;
 
 	public SupportedCurrencies getSupportedCurrencyPairs() {
-		return mapperUtil.mapToSupportedCurrencies(restTemplateAdapter.performGetRequest(externalUrlsConfig.getSupportedCurrenciesUrl()));
+		return mapperUtil.mapToSupportedCurrencies(
+				restTemplateAdapter.performGetRequest(
+					externalUrlsConfig.getSupportedCurrenciesUrl()));
 	}
 
 	public CurrencyRates getMajorCurrencyPairs() {
-		return mapperUtil.mapToMajorCurrencies(restTemplateAdapter.performGetRequest(externalUrlsConfig.getMajorCurrenciesUrl()
-						+ mapperUtil.mapListToString((ArrayList) currenciesConfig.getCurrencies())));
+		return mapperUtil.mapToMajorCurrencies(
+				restTemplateAdapter.performGetRequest(
+				 externalUrlsConfig.getMajorCurrenciesUrl() +
+						 mapperUtil.mapListToString((ArrayList) currenciesConfig.getCurrencies())));
 	}
 }
