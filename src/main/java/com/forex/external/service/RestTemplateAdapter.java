@@ -13,10 +13,17 @@ import org.springframework.web.client.RestTemplate;
 public class RestTemplateAdapter {
 
 	@Autowired
-	RequestUtil requestUtil;
+	private RequestUtil requestUtil;
+
+	private ResponseEntity<String> responseEntity;
 
 	public ResponseEntity<String> performGetRequest(final String url) {
-		return new RestTemplate().exchange(url, HttpMethod.GET, requestUtil.buildHeaders(), String.class);
+		try {
+			responseEntity = new RestTemplate().exchange(url, HttpMethod.GET, requestUtil.buildHeaders(), String.class);
+		} catch (Exception exception) {
+			log.error("failed to get response from url: {}, error message: {}, cause: {}" + url, exception.getMessage(), exception.getCause());
+		}
+		return responseEntity;
 	}
 
 }

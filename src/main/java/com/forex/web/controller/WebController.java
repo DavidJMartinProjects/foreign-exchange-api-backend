@@ -16,17 +16,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class WebController {
 
     @Autowired
-    ForexApiService forexApiService;
+    private ForexApiService forexApiService;
 
     @GetMapping
     public ResponseEntity<String> getAllExchangeRates() {
-        log.info("request received successfully.");
+        log.info("GET / request received successfully.");
         return new ResponseEntity("welcome to forex web service.", HttpStatus.OK);
     }
 
     @GetMapping(value = "/all")
     public ResponseEntity<SupportedCurrencies> getAllSupportedCurrencies() {
-        log.info("request received successfully.");
+        log.info("GET /all request received successfully.");
         return new ResponseEntity(forexApiService.getSupportedCurrencyPairs(), HttpStatus.OK);
     }
 

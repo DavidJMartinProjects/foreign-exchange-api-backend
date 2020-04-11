@@ -12,14 +12,13 @@ import java.io.IOException;
 @Component
 public class MapperUtil {
 
-	SupportedCurrencies supportedCurrencies;
+	private SupportedCurrencies supportedCurrencies;
 
 	public SupportedCurrencies mapToSupportedCurrencies(final ResponseEntity responseEntity) {
-		String responseBody = responseEntity.getBody().toString();
 		try {
-			supportedCurrencies = new ObjectMapper().readValue(responseBody, SupportedCurrencies.class);
+			supportedCurrencies = new ObjectMapper().readValue(responseEntity.getBody().toString(), SupportedCurrencies.class);
 		} catch (IOException exception) {
-			log.info("error processing response from external service.", exception.getMessage(), exception.getCause());
+			log.info("error mapping response from external service.", exception.getMessage(), exception.getCause());
 		}
 		return supportedCurrencies;
 	}
