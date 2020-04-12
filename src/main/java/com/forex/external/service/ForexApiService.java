@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 public class ForexApiService {
 
 	@Autowired
-	private MapperUtil mapperUtil;
+	private Symbols symbols;
 
 	@Autowired
-	private Symbols symbols;
+	private MapperUtil mapperUtil;
 
 	@Autowired
 	private ExternalUrls externalUrls;
