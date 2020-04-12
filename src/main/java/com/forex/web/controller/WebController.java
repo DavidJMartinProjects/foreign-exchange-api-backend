@@ -21,7 +21,7 @@ public class WebController {
     @GetMapping(value = "/major")
     public ResponseEntity<CurrencyRates> getMajorCurrencyPairs() {
         log.info("GET /major request received successfully.");
-        return new ResponseEntity(forexApiService.getMajorCurrencyPairs(), HttpStatus.OK);
+        return new ResponseEntity<>(forexApiService.getMajorCurrencyPairs(), HttpStatus.OK);
     }
 
 }
